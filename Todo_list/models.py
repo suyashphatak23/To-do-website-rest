@@ -14,7 +14,8 @@ class Task(models.Model):
         ("OVERDUE", "Overdue"), 
     ]
 
-    timestamp = models.DateTimeField(auto_now_add=True, editable=False)
+    record_date = models.DateField(auto_now_add=True, editable=False)
+    record_time = models.TimeField(auto_now_add=True, editable=False)
     title = models.CharField(max_length=100, blank=False, null=False)
     description = models.CharField(max_length=1000, blank=False, null=False)
     due_date = models.DateField(default= date.today)
